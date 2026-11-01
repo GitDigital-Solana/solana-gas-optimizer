@@ -1,0 +1,11 @@
+name: Optimizer Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  simulate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "Simulating gas optimization analysis..."

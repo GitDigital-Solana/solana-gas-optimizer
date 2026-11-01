@@ -9,6 +9,54 @@ https://studio.buymeacoffee.com/stream-alert/page/Rickcreator1987?user_key=93eba
 
 <a href="https://www.buymeacoffee.com/Rickcreator1987"><img src="https://img.buymeacoffee.com/button-api/?text=Support our Work&emoji=👨‍🏭&slug=Rickcreator1987&button_colour=40DCA5&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00" /></a>
 
+# Solana Gas Optimizer
+
+Solana Gas Optimizer is a GitHub App that analyzes Solana program code and pull requests to detect compute-unit inefficiencies and recommend optimizations. It acts as an automated performance reviewer for Solana developers.
+
+## Features
+
+- Detects high compute-unit usage patterns
+- Analyzes Rust and Anchor code
+- Comments directly on PRs with suggestions
+- Estimates compute-unit impact of changes
+- Identifies inefficient account usage
+- Detects redundant syscalls and serialization
+- Supports custom optimization rules
+
+## How it works
+
+1.  A pull request is opened or updated.
+2.  The bot:
+    - Reads the diff
+    - Runs pattern-based analysis
+    - Estimates compute-unit impact
+    - Posts comments with optimization suggestions
+3.  On push to `main`, it can generate a performance report.
+
+## Example PR comment
+
+> ⚡ **Potential Optimization Detected**
+> **File: src/instructions/transfer.rs**
+> *   Loop contains repeated account deserialization
+> *   Consider caching account data outside the loop
+> *   Estimated CU savings: ~2,000–4,000 per transaction
+
+## Configuration
+
+Add `.solana-gas-optimizer.yml`:
+
+```yaml
+rules:
+  anchor_patterns: true
+  rust_patterns: true
+  cu_patterns: true
+comments:
+  enabled: true
+  severity_threshold: "medium"
+reporting:
+  generate_summary: true
+
+
 
 <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="Rickcreator1987" data-description="Support me on Buy me a coffee!" data-message="" data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
 ---

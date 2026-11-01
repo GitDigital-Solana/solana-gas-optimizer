@@ -1,0 +1,15 @@
+name: Solana Gas Optimizer
+url: https://github.com/apps/solana-gas-optimizer
+hook_attributes:
+  url: https://your-domain.com/webhooks/github
+redirect_url: https://your-domain.com/app/callback
+callback_urls:
+  - https://your-domain.com/app/callback
+public: false
+default_permissions:
+  contents: read
+  metadata: read
+  pull_requests: write
+default_events:
+  - pull_request
+  - push
